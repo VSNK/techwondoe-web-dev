@@ -1,25 +1,13 @@
 import { FC } from "react";
 import styled, { useTheme } from "styled-components";
 import SubHeading from "../typography/SubHeading";
-import { Text } from "./index.styles";
-import { ImCheckmark } from "react-icons/im";
+import {
+  Container,
+  ContentContainer,
+  IconContainer,
+  Text,
+} from "./index.styles";
 import { FiCheck } from "react-icons/fi";
-
-const Container = styled.div`
-  display: flex;
-  align-items: stretch;
-  @media screen and (min-width: 376px) {
-    width: 33%;
-  }
-`;
-
-const IconContainer = styled.div`
-  padding: 15px;
-`;
-
-const ContentContainer = styled.div`
-  flex: 1;
-`;
 
 interface ChooseUsCardProps {
   title: string;

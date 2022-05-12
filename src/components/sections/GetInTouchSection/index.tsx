@@ -1,3 +1,4 @@
+import useSingleEntryData from "../../../hooks/useSingleEntryData";
 import {
   Container,
   WhiteButton,
@@ -6,14 +7,13 @@ import {
 } from "./index.styles";
 
 const GetInTouchSection = () => {
+  const resp: any = useSingleEntryData("5r1bz7KmLVgpVFrirWbzMn");
+  const { buttonText, title, description } = resp;
   return (
     <Container>
-      <WhiteHeading>Speak to a Career Expert</WhiteHeading>
-      <WhiteParagraph>
-        We have are dedicated to finding the best fit for you. Get in touch to
-        organize a face-to-face catch up with someone from our team
-      </WhiteParagraph>
-      <WhiteButton>Get in touch</WhiteButton>
+      <WhiteHeading>{title}</WhiteHeading>
+      <WhiteParagraph>{description}</WhiteParagraph>
+      <WhiteButton>{buttonText}</WhiteButton>
     </Container>
   );
 };

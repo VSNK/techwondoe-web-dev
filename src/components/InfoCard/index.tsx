@@ -15,9 +15,15 @@ interface InfoCardProps {
   iconType: "users" | "briefcase";
   title: string;
   description: string;
+  linkText: string;
 }
 
-const InfoCard: FC<InfoCardProps> = ({ title, description, iconType }) => {
+const InfoCard: FC<InfoCardProps> = ({
+  title,
+  description,
+  iconType,
+  linkText,
+}) => {
   const theme: any = useTheme();
   return (
     <Container>
@@ -34,7 +40,7 @@ const InfoCard: FC<InfoCardProps> = ({ title, description, iconType }) => {
       <ParagraphContainer>
         <Paragraph>{description}</Paragraph>
       </ParagraphContainer>
-      <Link>Learn more</Link>
+      <Link>{linkText}</Link>
     </Container>
   );
 };

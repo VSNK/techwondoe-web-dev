@@ -7,6 +7,10 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  @media screen and (min-width: 900px) {
+    padding: 20px;
+  }
 `;
 
 export const CardContainer = styled.div`
@@ -14,7 +18,7 @@ export const CardContainer = styled.div`
   flex-direction: column;
   max-width: 1000px;
   width: 100%;
-  @media screen and (min-width: 376px) {
+  @media screen and (min-width: 900px) {
     flex-direction: row;
     align-items: stretch;
   }
@@ -22,10 +26,16 @@ export const CardContainer = styled.div`
 
 export const Image = styled.img`
   width: 100%;
-  max-width: 450px;
   border-radius: 0px;
+  display: block;
+  margin: auto;
   @media screen and (min-width: 376px) {
-    padding: 50px;
+    max-width: 450px;
+    border-radius: 10px;
+  }
+  @media screen and (min-width: 900px) {
+    max-width: 450px;
+    padding: 40px;
     border-radius: 10px;
   }
 `;
@@ -33,7 +43,7 @@ export const Image = styled.img`
 export const ContentContainer = styled.div`
   flex: 1;
   padding: 20px;
-  @media screen and (min-width: 376px) {
+  @media screen and (min-width: 900px) {
     margin-left: 50px;
     padding: 0px;
   }
@@ -52,4 +62,21 @@ export const SmallPrimaryText = styled(Paragraph)`
   line-height: 22px;
   margin-bottom: 0px;
   color: ${(props) => props.theme.primary};
+`;
+
+export const RibbonImage = styled.img`
+  height: 490px;
+  background-size: cover;
+  position: absolute;
+  left: 0%;
+  top: -100px;
+  margin-left: -58%;
+  overflow: hidden;
+  visibility: hidden;
+  @media screen and (min-width: 1050px) {
+    visibility: visible;
+    width: 35%;
+    height: 88%;
+    margin-left: 0px;
+  }
 `;

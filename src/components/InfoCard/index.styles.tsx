@@ -1,13 +1,17 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  max-width: 425px;
+  min-width: 300px;
   height: 400px;
   padding: 40px;
   margin: 12px;
   display: flex;
   flex-direction: column;
   background-color: white;
+  flex-grow: 1;
+  @media screen and (min-width: 900px) {
+    max-width: 425px;
+  }
 `;
 
 export const IconContainer = styled.div<{ backgroundColor: string }>`

@@ -1,25 +1,30 @@
-import React from "react";
 import {
   Container,
   CopyRightsContainer,
   CopyRightsText,
   Link,
-  LinkContainer,
   LinkContainerFour,
   LinkContainerOne,
   LinkContainerThree,
   LinkContainerTwo,
   MainContainer,
-  SocialMediaIcon,
   SocialMediaLink,
   SocialMediaLinksContainer,
   UnderlinedLink,
 } from "./index.styles";
 import { FaInstagramSquare, FaLinkedinIn, FaFacebookF } from "react-icons/fa";
 import { useTheme } from "styled-components";
+import useSingleEntryData from "../../../hooks/useSingleEntryData";
+import useGetData from "../../../hooks/useGetData";
 
 const FooterSection = () => {
   const theme: any = useTheme();
+  const { copyrightsText }: any = useSingleEntryData("3EfIv6HZKyC8D3g2z7odkn");
+  const sectionOneLinks = useGetData("contactSectionOneLinks", "order");
+  const sectionTwoLinks = useGetData("contactSectionTwoLinks", "order");
+  const sectionThreeLinks = useGetData("contactSectionThreeLinks", "order");
+  const sectionFourLinks = useGetData("contactSectionFourLinks", "order");
+
   return (
     <>
       <Container>
@@ -36,34 +41,30 @@ const FooterSection = () => {
             </SocialMediaLink>
           </SocialMediaLinksContainer>
           <LinkContainerOne>
-            <Link>Home</Link>
-            <Link>About</Link>
-            <Link>Candidates</Link>
+            {sectionOneLinks.map(({ title, order }) => (
+              <Link key={order}>{title}</Link>
+            ))}
           </LinkContainerOne>
           <LinkContainerTwo>
-            <Link>Employers</Link>
-            <Link>Latest News</Link>
-            <Link>Contact</Link>
+            {sectionTwoLinks.map(({ title, order }) => (
+              <Link key={order}>{title}</Link>
+            ))}
           </LinkContainerTwo>
           <LinkContainerThree>
-            <UnderlinedLink>+ 62 (0) 9 124 5470</UnderlinedLink>
-            <UnderlinedLink>careers@namespace.com</UnderlinedLink>
+            {sectionThreeLinks.map(({ title, order }) => (
+              <UnderlinedLink key={order}>{title}</UnderlinedLink>
+            ))}
           </LinkContainerThree>
           <LinkContainerFour>
-            <Link>
-              Level 3<br />
-              79 High Street
-              <br />
-              Melbourne CBD
-              <br />
-              1010
-            </Link>
+            {sectionFourLinks.map(({ address, order }) => (
+              <Link key={order}>{address}</Link>
+            ))}
           </LinkContainerFour>
         </MainContainer>
       </Container>
 
       <CopyRightsContainer>
-        <CopyRightsText>Copyright © 2021 - Beyond Ltd. </CopyRightsText>
+        <CopyRightsText>{copyrightsText}</CopyRightsText>
       </CopyRightsContainer>
     </>
   );

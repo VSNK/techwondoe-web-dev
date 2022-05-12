@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from "../../Button";
 
 export const Container = styled.div`
   display: flex;
@@ -19,9 +20,6 @@ export const TitleContainer = styled.div`
   margin-bottom: 20px;
   align-items: center;
   padding: 20px;
-  @media screen and (min-width: 376px) {
-    padding: 5px;
-  }
 `;
 
 export const CardContainer = styled.div`
@@ -29,6 +27,7 @@ export const CardContainer = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 20px;
+  flex-wrap: wrap;
   @media screen and (min-width: 376px) {
     flex-direction: row;
     justify-content: space-between;
@@ -36,12 +35,15 @@ export const CardContainer = styled.div`
   }
 `;
 
-export const Link = styled.a`
-  font-family: ${(props) => props.theme.fontFamily};
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 27px;
-  color: ${(props) => props.theme.primary};
-  margin-right: 5px;
+export const Link = styled(Button)`
+  @media screen and (max-width: 450px) {
+    font-family: ${(props) => props.theme.fontFamily};
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+    color: ${(props) => props.theme.primary};
+    margin-right: 5px;
+    background-color: transparent;
+  }
 `;

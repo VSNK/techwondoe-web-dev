@@ -15,9 +15,15 @@ interface NewsCardProps {
   image: string;
   imageTitle: string;
   title: string;
+  linkText: string;
 }
 
-const NewsCard: FC<NewsCardProps> = ({ image, imageTitle, title }) => {
+const NewsCard: FC<NewsCardProps> = ({
+  image,
+  imageTitle,
+  title,
+  linkText,
+}) => {
   const theme: any = useTheme();
   return (
     <Container>
@@ -27,7 +33,7 @@ const NewsCard: FC<NewsCardProps> = ({ image, imageTitle, title }) => {
         <SubHeading>{title}</SubHeading>
       </HeadingContainer>
       <LinkContainer>
-        <Link>Read more</Link>
+        <Link>{linkText}</Link>
         <FiArrowRight size={22} color={theme?.primary ?? "#000"} />
       </LinkContainer>
     </Container>

@@ -7,10 +7,16 @@ import Heading from "../components/typography/Heading";
 export default {
   title: "Typography/H1",
   component: Heading,
+  argTypes: {
+    text: { type: "string" },
+  },
 } as ComponentMeta<typeof Heading>;
 
-export const H1: ComponentStory<typeof Heading> = () => (
+export const H1: ComponentStory<typeof Heading> = ({ text }) => (
   <ThemeProvider theme={lightTheme}>
-    <Heading>Heading - H1</Heading>
+    <Heading>{text}</Heading>
   </ThemeProvider>
 );
+H1.args = {
+  text: "Heading - H1",
+};

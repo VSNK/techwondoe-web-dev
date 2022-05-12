@@ -7,10 +7,16 @@ import SubHeading from "../components/typography/SubHeading";
 export default {
   title: "Typography/H2",
   component: SubHeading,
+  argTypes: {
+    text: { type: "string" },
+  },
 } as ComponentMeta<typeof SubHeading>;
 
-export const H2: ComponentStory<typeof SubHeading> = () => (
+export const H2: ComponentStory<typeof SubHeading> = ({ text }) => (
   <ThemeProvider theme={lightTheme}>
-    <SubHeading>SubHeading - H2</SubHeading>
+    <SubHeading>{text}</SubHeading>
   </ThemeProvider>
 );
+H2.args = {
+  text: "Subheading - H2",
+};

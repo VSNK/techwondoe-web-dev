@@ -18,6 +18,7 @@ export const MainContainer = styled.div`
 
 export const SocialMediaLinksContainer = styled.div`
   width: 100%;
+  align-self: stretch;
   display: flex;
   align-items: flex-end;
   justify-content: end;
@@ -72,6 +73,7 @@ export const LinkContainerThree = styled(LinkContainer)`
 export const LinkContainerFour = styled(LinkContainer)`
   order: 3;
   @media screen and (min-width: 1000px) {
+    width: 120px;
     order: 0;
   }
 `;
@@ -86,6 +88,7 @@ export const Link = styled.a`
   color: #000000;
   display: block;
   margin: 10px;
+  cursor: pointer;
 `;
 
 export const UnderlinedLink = styled(Link)`

@@ -2,11 +2,15 @@ import styled from "styled-components";
 import Paragraph from "../typography/Paragraph";
 
 export const Container = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
-  @media screen and (min-width: 376px) {
+  @media screen and (min-width: 650px) {
+    min-height: 400px;
+    width: 45%;
+    margin: 5px;
+  }
+  @media screen and (min-width: 1000px) {
     min-height: 400px;
     max-width: 335px;
     width: 32%;

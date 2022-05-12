@@ -8,7 +8,7 @@ const Heading = styled.h1`
   line-height: 36px;
   color: #111012;
   margin: 0px;
-  @media screen and (min-width: 376px) {
+  @media screen and (min-width: 450px) {
     font-size: 40px;
     line-height: 60px;
   }
